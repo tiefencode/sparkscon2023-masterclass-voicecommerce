@@ -44,7 +44,7 @@ const WhereToGetFoodHandler = {
 ## SSML
 ```
 <speak>    
-	<amazon:emotion name="excited" intensity="medium">Willkommen</amazon:emotion> zur <lang xml:lang="en-US">Sparkscon</lang>. Deutschlands größte Digital Experience Konferenz.
+	<amazon:emotion name="excited" intensity="medium">Willkommen zur <lang xml:lang="en-US">Sparkscon</lang></amazon:emotion>. Deutschlands größte Digital Experience Konferenz.
 </speak> 
 ```
 
