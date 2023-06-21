@@ -12,9 +12,9 @@
 - Simulator
 - Real Device (Echo)
   
-## Sample Intent:
+## Beispiel Intent 'WhereToGetFoodHandler' Backend Code
 
-*Den intent handler im backend erstellen*
+*Den Intent Handler erstellen*
 ```
 const WhereToGetFoodHandler = {
     canHandle(handlerInput) {
@@ -33,7 +33,7 @@ const WhereToGetFoodHandler = {
 };
 ```
 
-*Den intent handler registrieren*
+*Den Intent Handler registrieren*
 ```
 .addRequestHandlers(
 	...,
@@ -54,9 +54,11 @@ const WhereToGetFoodHandler = {
     <amazon:effect name="whispered">Nach der Sparkscon steigt eine after show party</amazon:effect>.
 </speak>
 ```
+
 ## Variable Handling
 
 ### Session Variablen (Attributemanager)
+
 *Alle Session Variablen holen, einen Wert zuweisen und wieder in den attributesManager schreiben*
 ```
 const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
@@ -65,7 +67,7 @@ sessionAttributes['food'] = food;
 handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 ```
 
-*Die Variable in einem anderen intent holen und ausgeben*
+*Die Variable in einem anderen Intent holen und ausgeben*
 ```
 const WhatIsMyFavoriteFoodHandler = {
     canHandle(handlerInput) {
@@ -85,7 +87,7 @@ const WhatIsMyFavoriteFoodHandler = {
 };
 ```
 
-*Wieder den handler des neuen intents registrieren*
+*Wieder den handler des neuen Intents registrieren*
 ```
 .addRequestHandlers(
 	...,
@@ -151,7 +153,7 @@ const SaveAttributesResponseInterceptor = {
 };
 ```
 
-*Beide inceptor am Ende des files registrieren*
+*Beide Inceptors am Ende des Files registrieren*
 ```
 .addRequestInterceptors(
 	...
@@ -162,15 +164,3 @@ const SaveAttributesResponseInterceptor = {
 .withPersistenceAdapter(persistenceAdapter)
 ```
 
-
-
-## Notitzen
-
-Alexa Conversations
-
-Vorteile:
-
-Conversations liegen parallel zum Interaction Model
-Beispiel Konversationen geben Raum für Variationen. Müssen nicht selbst erzeugt werden.
-Happy Path kann schneller erreicht werden
-Kontext: Abhängigkeiten zwischen Intents können leichter aufgelößt werden
