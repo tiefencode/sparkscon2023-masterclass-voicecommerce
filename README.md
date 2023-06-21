@@ -51,7 +51,7 @@ const WhereToGetFoodHandler = {
 ```
 <speak>   
     Noch ein Geheimtipp von mir: 
-    <amazon:effect name="whispered">Nach der Sparkscon steigt eine after show party</amazon:effect>.
+    <amazon:effect name="whispered">Nach der <lang xml:lang="en-US">Sparkscon</lang> steigt eine after show party</amazon:effect>.
 </speak>
 ```
 
