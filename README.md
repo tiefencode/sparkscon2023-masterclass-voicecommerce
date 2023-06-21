@@ -96,7 +96,7 @@ const WhatIsMyFavoriteFoodHandler = {
 ```
 
 ### Variablen persistieren
-*Zu begin den persistanceAdapter initialisieren*
+*Zu Beginn den persistanceAdapter initialisieren*
 ```
 // Get an instance of the persistence adapter
 var persistenceAdapter = getPersistenceAdapter();
