@@ -57,7 +57,7 @@ const WhereToGetFoodHandler = {
 ## Variable Handling
 
 ### Session Variablen (Attributemanager)
-*Die Variable holen vom attributesManager*
+*Alle Session Variablen holen, einen Wert zuweisen und wieder in den attributesManager schreiben*
 ```
 const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
 
@@ -85,7 +85,7 @@ const WhatIsMyFavoriteFoodHandler = {
 };
 ```
 
-*Wieder den handler registrieren*
+*Wieder den handler des neuen intents registrieren*
 ```
 .addRequestHandlers(
 	...,
