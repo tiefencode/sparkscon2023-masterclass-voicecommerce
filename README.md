@@ -21,7 +21,7 @@ const WhereToGetFoodHandler = {
             && Alexa.getIntentName(handlerInput.requestEnvelope) === 'WhereToGetFood';
     },
     handle(handlerInput) {
-		const food = Alexa.getSlotValue(handlerInput.requestEnvelope, 'food');
+	const food = Alexa.getSlotValue(handlerInput.requestEnvelope, 'food');
         const speakOutput = `Du findest ${food} draußen in einem der Stände.`;
 
         return handlerInput.responseBuilder
@@ -58,7 +58,7 @@ const WhereToGetFoodHandler = {
 ```
 const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
 
-sessionAttributes['food'] = 'food';
+sessionAttributes['food'] = food;
 handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 ```
 
