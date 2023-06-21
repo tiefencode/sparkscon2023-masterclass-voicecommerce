@@ -62,6 +62,32 @@ sessionAttributes['food'] = food;
 handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 ```
 
+```
+const WhatIsMyFavoriteFoodHandler = {
+    canHandle(handlerInput) {
+        return Alexa.getRequestType(handlerInput.requestEnvelope) === 'IntentRequest'
+            && Alexa.getIntentName(handlerInput.requestEnvelope) === 'WhatIsMyFavoriteFood';
+    },
+    handle(handlerInput) {
+	const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
+
+        const speakOutput = `Mein Lieblingsessen ist ${sessionAttributes['food']}`;
+
+        return handlerInput.responseBuilder
+            .speak(speakOutput)
+            .reprompt(speakOutput)
+            .getResponse();
+    }
+};
+```
+
+```
+.addRequestHandlers(
+	...,
+	WhatIsMyFavoriteFoodHandler,
+	...)
+```
+
 ### Variablen persistieren
 ```
 // Get an instance of the persistence adapter
