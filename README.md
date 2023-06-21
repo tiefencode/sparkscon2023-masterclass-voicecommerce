@@ -14,6 +14,7 @@
   
 ## Sample Intent:
 
+*Den intent handler im backend erstellen*
 ```
 const WhereToGetFoodHandler = {
     canHandle(handlerInput) {
@@ -32,6 +33,7 @@ const WhereToGetFoodHandler = {
 };
 ```
 
+*Den intent handler registrieren*
 ```
 .addRequestHandlers(
 	...,
@@ -55,6 +57,7 @@ const WhereToGetFoodHandler = {
 ## Variable Handling
 
 ### Session Variablen (Attributemanager)
+*Die Variable holen vom attributesManager*
 ```
 const sessionAttributes = handlerInput.attributesManager.getSessionAttributes();
 
@@ -62,6 +65,7 @@ sessionAttributes['food'] = food;
 handlerInput.attributesManager.setSessionAttributes(sessionAttributes);
 ```
 
+*Die Variable in einem anderen intent holen und ausgeben*
 ```
 const WhatIsMyFavoriteFoodHandler = {
     canHandle(handlerInput) {
@@ -81,6 +85,7 @@ const WhatIsMyFavoriteFoodHandler = {
 };
 ```
 
+*Wieder den handler registrieren*
 ```
 .addRequestHandlers(
 	...,
@@ -89,6 +94,7 @@ const WhatIsMyFavoriteFoodHandler = {
 ```
 
 ### Variablen persistieren
+*Zu begin den persistanceAdapter initialisieren*
 ```
 // Get an instance of the persistence adapter
 var persistenceAdapter = getPersistenceAdapter();
@@ -107,6 +113,7 @@ function getPersistenceAdapter(tableName) {
 }
 ```
 
+*Inceptors für das Laden und Speichern der Variablen anlegen*
 ```
 /* *
  * Below we use async and await ( more info: javascript.info/async-await )
@@ -144,6 +151,7 @@ const SaveAttributesResponseInterceptor = {
 };
 ```
 
+*Beide inceptor am Ende des files registrieren*
 ```
 .addRequestInterceptors(
 	...
